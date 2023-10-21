@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `abiswas.dev`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.abiswas.dev`,
   },
   plugins: [],
-}
+};
