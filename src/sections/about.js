@@ -5,7 +5,7 @@ import { Image } from "react-bootstrap";
 const About = ({ rawContent }) => {
   const content = (
     <>
-      <Image src={rawContent.profilePictureUrl} />
+      {/* <Image src={rawContent.profilePictureUrl} /> */}
       <div>
         <h1>
           Hi! I'm {rawContent.firstName} {rawContent.lastName}.

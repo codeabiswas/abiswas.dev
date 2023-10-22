@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 const Layout = ({ children }) => {
   // Bootstrap Breakpoints info: https://react-bootstrap.github.io/docs/layout/breakpoints/
-  return <Container fluid>{children}</Container>;
+  return <Container fluid="md">{children}</Container>;
 };
 
 export default Layout;
