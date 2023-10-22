@@ -10,6 +10,36 @@ module.exports = {
   siteMetadata: {
     title: `abiswas.dev`,
     siteUrl: `https://www.abiswas.dev`,
+    menuLinks: [
+      {
+        name: "andrei",
+        link: "/",
+      },
+      {
+        name: "experience",
+        link: "/#experience",
+      },
+      {
+        name: "education",
+        link: "/#education",
+      },
+      {
+        name: "skills",
+        link: "/#skills",
+      },
+      {
+        name: "tech",
+        link: "/#tech",
+      },
+      {
+        name: "music",
+        link: "/#music",
+      },
+      {
+        name: "contact",
+        link: "/#contact",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-sass`,

@@ -13,6 +13,7 @@ import Music from "../sections/musicfolio";
 import Skills from "../sections/skills";
 import Tech from "../sections/techfolio";
 import Layout from "../assets/layout";
+import StyledNavbar from "../components/StyledNavbar/StyledNavbar";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -61,6 +62,7 @@ const IndexPage = () => {
   // * https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
   const children = (
     <main>
+      <StyledNavbar />
       <About rawContent={JSON.parse(data.files["about.json"].content)} />
       <Experience
         rawContent={JSON.parse(data.files["experience.json"].content)}
