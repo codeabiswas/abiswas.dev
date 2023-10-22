@@ -1,7 +1,8 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown, Container, Form } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { useStaticQuery, graphql } from "gatsby";
 import { StyledMenu, CollapsibleNavbar } from "./Menu.styled";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const Menu = () => {
   // Needs to be a static query since navbar links data is a GraphQL query and I need to render this in a component
@@ -44,11 +45,11 @@ const Menu = () => {
             </NavDropdown>
             <Nav.Link>Resume</Nav.Link>
             {/* Show only on md and below screen sizes */}
-            <Form.Switch className="d-lg-none" id="theme-toggle" label="" />
+            <ThemeToggle label={""} collapseFriendly />
           </Nav>
         </CollapsibleNavbar>
         {/* Show only on lg and above screen sizes */}
-        <Form.Switch className="d-none d-lg-block" id="theme-toggle" label="" />
+        <ThemeToggle label={""} />
       </Container>
     </StyledMenu>
   );
