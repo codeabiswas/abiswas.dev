@@ -1,8 +1,9 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { Navbar, Nav, NavDropdown, Container, Form } from "react-bootstrap";
+import { useStaticQuery, graphql } from "gatsby";
+import { StyledMenu, CollapsibleNavbar } from "./Menu.styled";
 
-const StyledNavbar = () => {
+const Menu = () => {
   // Needs to be a static query since navbar links data is a GraphQL query and I need to render this in a component
   const data = useStaticQuery(graphql`
     query {
@@ -21,34 +22,36 @@ const StyledNavbar = () => {
   const menuLinks = data.site.siteMetadata.menuLinks;
 
   return (
-    <Navbar expand="lg">
-      <Container>
+    <StyledMenu collapseOnSelect>
+      <Container className="justify-content-between">
         <Navbar.Brand>~/{menuLinks[0].name}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <CollapsibleNavbar id="basic-navbar-nav">
           <Nav>
-            <NavDropdown title="Background" id="background-dropdown">
+            <NavDropdown title="Profile" id="profile-dropdown">
               {menuLinks.slice(1, 4).map((link) => (
-                <NavDropdown.Item key={link.name}>
-                  <Link to={link.link}>/{link.name}</Link>
+                <NavDropdown.Item key={link.name} href={link.link}>
+                  /{link.name}
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
             <NavDropdown title="Projects" id="projects-dropdown">
               {menuLinks.slice(4).map((link) => (
-                <NavDropdown.Item key={link.name}>
-                  <Link to={link.link}>/{link.name}</Link>
+                <NavDropdown.Item key={link.name} href={link.link}>
+                  /{link.name}
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
             <Nav.Link>Resume</Nav.Link>
+            {/* Show only on md and below screen sizes */}
+            <Form.Switch className="d-lg-none" id="theme-toggle" label="" />
           </Nav>
-          {/* Theme Toggle */}
-          <Nav.Link>TT</Nav.Link>
-        </Navbar.Collapse>
+        </CollapsibleNavbar>
+        {/* Show only on lg and above screen sizes */}
+        <Form.Switch className="d-none d-lg-block" id="theme-toggle" label="" />
       </Container>
-    </Navbar>
+    </StyledMenu>
   );
 };
 
-export default StyledNavbar;
+export default Menu;

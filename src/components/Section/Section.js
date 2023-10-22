@@ -6,7 +6,7 @@ import ExpeduSection from "../ExpeduSection/ExpeduSection";
 const Section = ({ id, title, content }) => {
   return (
     <section id={id}>
-      <Container fluid>
+      <Container fluid="lg">
         {title ? <Title title={title} /> : <></>}
         {id === "experience" || id === "education" ? (
           <ExpeduSection id={id} title={title} rawContentArray={content} />
