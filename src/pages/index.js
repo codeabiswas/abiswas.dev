@@ -13,7 +13,7 @@ import Music from "../sections/musicfolio";
 import Skills from "../sections/skills";
 import Tech from "../sections/techfolio";
 import Menu from "../components/Menu/Menu";
-import Layout from "../assets/layout";
+import Footer from "../components/Footer/Footer";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -79,16 +79,9 @@ const IndexPage = () => {
 
   return (
     <body>
-      <Layout
-        children={
-          <>
-            <Menu />
-            <>{children}</>
-          </>
-        }
-      />
-      {/* <Menu />
-      {children} */}
+      <Menu />
+      {children}
+      <Footer />
     </body>
   );
 };
