@@ -27,21 +27,25 @@ const About = ({ rawAboutContent, rawContactContent }) => {
                 <ContactIcon
                   iconObject={<BsLinkedin />}
                   contactUrl={contact.url}
+                  contactHandle={contact.handle}
                 />
               ) : contact.accountType === "github" ? (
                 <ContactIcon
                   iconObject={<BsGithub />}
                   contactUrl={contact.url}
+                  contactHandle={contact.handle}
                 />
               ) : contact.accountType === "stackoverflow" ? (
                 <ContactIcon
                   iconObject={<BsStackOverflow />}
                   contactUrl={contact.url}
+                  contactHandle={contact.handle}
                 />
               ) : contact.accountType === "email" ? (
                 <ContactIcon
                   iconObject={<BsEnvelopeAt />}
                   contactUrl={contact.url}
+                  contactHandle={contact.handle}
                 />
               ) : (
                 <></>
