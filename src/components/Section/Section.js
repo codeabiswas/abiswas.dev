@@ -2,13 +2,11 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Title from "../Title/Title";
 import ExpeduSection from "../ExpeduSection/ExpeduSection";
+import StyledSection from "./Section.styled";
 
 const Section = ({ id, title, content }) => {
   return (
-    <section
-      id={id}
-      className="min-vh-100 py-5 d-flex flex-column justify-content-center"
-    >
+    <StyledSection id={id}>
       <Container fluid="lg">
         {title ? <Title title={title} /> : <></>}
         {id === "experience" || id === "education" ? (
@@ -17,7 +15,7 @@ const Section = ({ id, title, content }) => {
           <>{content}</>
         )}
       </Container>
-    </section>
+    </StyledSection>
   );
 };
 
