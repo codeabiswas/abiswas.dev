@@ -2,6 +2,8 @@ node_modules/
 .cache/
 public
 .vscode/
+.DS_Store
+src/.DS_Store
 
 # Ignore environment variables
 .env.development
