@@ -62,8 +62,10 @@ const IndexPage = () => {
   // * https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
   const children = (
     <main>
-      {/* <Menu /> */}
-      <About rawContent={JSON.parse(data.files["about.json"].content)} />
+      <About
+        rawAboutContent={JSON.parse(data.files["about.json"].content)}
+        rawContactContent={JSON.parse(data.files["contact.json"].content)}
+      />
       <Experience
         rawContent={JSON.parse(data.files["experience.json"].content)}
       />
@@ -73,7 +75,6 @@ const IndexPage = () => {
       <Skills rawContent={JSON.parse(data.files["skills.json"].content)} />
       <Tech rawContent={JSON.parse(data.files["projects.json"].content)} />
       <Music rawContent={JSON.parse(data.files["music.json"].content)} />
-      {/* <Contact rawContent={JSON.parse(data.files["contact.json"].content)} /> */}
     </main>
   );
 

@@ -1,24 +1,54 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Section from "../components/Section/section";
-import { Image } from "react-bootstrap";
+import { Image, Stack } from "react-bootstrap";
+import {
+  BsLinkedin,
+  BsGithub,
+  BsStackOverflow,
+  BsEnvelopeAt,
+} from "react-icons/bs";
+import ContactIcon from "../components/ContactIcon/ContactIcon";
 
-const About = ({ rawContent }) => {
+const About = ({ rawAboutContent, rawContactContent }) => {
   const content = (
     <>
-      {/* <Image src={rawContent.profilePictureUrl} /> */}
+      {/* <Image src={rawAboutContent.profilePictureUrl} /> */}
       <div>
         <h1>
-          Hi! I'm {rawContent.firstName} {rawContent.lastName}.
+          Hi! I'm {rawAboutContent.firstName} {rawAboutContent.lastName}.
         </h1>
-        {rawContent.description.map((paragraphContent, index) =>
-          index !== rawContent.description.length - 1 ? (
-            <p key={index}>{paragraphContent}</p>
-          ) : (
-            <p key={index} className="m-0">
-              {paragraphContent}
-            </p>
-          )
-        )}
+        {rawAboutContent.description.map((paragraphContent, index) => (
+          <p key={index}>{paragraphContent}</p>
+        ))}
+        <Stack direction="horizontal" gap={4}>
+          {rawContactContent.contacts.map((contact, index) => (
+            <Fragment key={index}>
+              {contact.accountType === "linkedin" ? (
+                <ContactIcon
+                  iconObject={<BsLinkedin />}
+                  contactUrl={contact.url}
+                />
+              ) : contact.accountType === "github" ? (
+                <ContactIcon
+                  iconObject={<BsGithub />}
+                  contactUrl={contact.url}
+                />
+              ) : contact.accountType === "stackoverflow" ? (
+                <ContactIcon
+                  iconObject={<BsStackOverflow />}
+                  contactUrl={contact.url}
+                />
+              ) : contact.accountType === "email" ? (
+                <ContactIcon
+                  iconObject={<BsEnvelopeAt />}
+                  contactUrl={contact.url}
+                />
+              ) : (
+                <></>
+              )}
+            </Fragment>
+          ))}
+        </Stack>
       </div>
     </>
   );
