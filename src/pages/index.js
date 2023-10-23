@@ -92,7 +92,7 @@ export default IndexPage;
 export const Head = () => {
   return (
     <>
-      <html lang="en" />
+      <html lang="en-US" />
       <title>abiswas.dev</title>
     </>
   );

@@ -25,7 +25,7 @@ const ThemeToggle = ({ collapseFriendly, label }) => {
   return (
     <div className={collapseFriendly ? "d-lg-none" : "d-none d-lg-block"}>
       <Form.Switch
-        id="theme-toggle"
+        // id="theme-toggle-switch"
         onClick={changeTheme}
         aria-label="Dark or light mode toggle"
         label={`Switch to ${themeOption} mode`}

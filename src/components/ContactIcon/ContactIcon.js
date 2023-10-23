@@ -7,7 +7,8 @@ const ContactIcon = ({ iconObject, contactUrl, contactHandle }) => {
       placement="bottom"
       overlay={<Tooltip>{contactHandle}</Tooltip>}
     >
-      <a href={contactUrl} target="_blank" rel="noopener noreferrer">
+      {/* rel=noreferrer implies noopener */}
+      <a href={contactUrl} target="_blank" rel="noreferrer">
         <h4>{iconObject}</h4>
       </a>
     </OverlayTrigger>
