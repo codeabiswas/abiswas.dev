@@ -2,6 +2,7 @@ import React from "react";
 import { Fragment, useEffect, useState } from "react";
 import Section from "../components/Section/section";
 import RepoLanguages from "../components/RepoLanguages/RepoLanguages";
+import Loading from "../components/Loading/Loading";
 
 const Tech = ({ rawContent }) => {
   const GITHUB_REPO_URL = `https://api.github.com/users/${rawContent.githubUsername}/repos`;
@@ -23,7 +24,7 @@ const Tech = ({ rawContent }) => {
       .catch(setError);
   }, [GITHUB_REPO_URL]);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
 

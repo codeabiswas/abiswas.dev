@@ -14,6 +14,7 @@ import Skills from "../sections/skills";
 import Tech from "../sections/techfolio";
 import Menu from "../components/Menu/Menu";
 import Footer from "../components/Footer/Footer";
+import Loading from "../components/Loading/Loading";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -52,7 +53,9 @@ const IndexPage = () => {
       .catch(setError);
   }, [pri_gist_api]);
 
-  if (loading) return <h1>Loading...</h1>;
+  console.log(pri_gist_api);
+
+  if (loading) return <Loading />;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
 

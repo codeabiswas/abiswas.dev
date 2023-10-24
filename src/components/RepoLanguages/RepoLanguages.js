@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Loading from "../Loading/Loading";
 
 const RepoLanguages = ({ languageUrl }) => {
   // When fetching data from API, there are several states:
@@ -19,7 +20,7 @@ const RepoLanguages = ({ languageUrl }) => {
       .catch(setError);
   }, [languageUrl]);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
 
