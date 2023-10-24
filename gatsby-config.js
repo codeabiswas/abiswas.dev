@@ -35,10 +35,10 @@ module.exports = {
         name: "music",
         link: "/#music",
       },
-      {
-        name: "contact",
-        link: "/#contact",
-      },
+      // {
+      //   name: "contact",
+      //   link: "/#contact",
+      // },
     ],
   },
   plugins: [
