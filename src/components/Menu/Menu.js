@@ -37,7 +37,9 @@ const Menu = () => {
       <StyledMenu collapseOnSelect>
         {/* <Container className="justify-content-between"> */}
         <Container fluid="lg">
-          <Navbar.Brand>~/{menuLinks[0].name}</Navbar.Brand>
+          <Navbar.Brand href={menuLinks[0].link}>
+            ~/{menuLinks[0].name}
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <CollapsibleNavbar id="basic-navbar-nav">
             <Nav>
