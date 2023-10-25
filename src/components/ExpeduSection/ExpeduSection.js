@@ -86,10 +86,14 @@ const ExpeduSection = ({ id, title, rawContentArray }) => {
       }
       categorizedData[data.role].push(data);
     } else {
-      if (!categorizedData[data.degree]) {
-        categorizedData[data.degree] = [];
+      // if (!categorizedData[data.degree]) {
+      //   categorizedData[data.degree] = [];
+      // }
+      // categorizedData[data.degree].push(data);
+      if (!categorizedData[data.educationLevel]) {
+        categorizedData[data.educationLevel] = [];
       }
-      categorizedData[data.degree].push(data);
+      categorizedData[data.educationLevel].push(data);
     }
   });
 
@@ -99,10 +103,9 @@ const ExpeduSection = ({ id, title, rawContentArray }) => {
   return (
     <>
       <Tab.Container defaultActiveKey={0} transition={false}>
-        {/* <Row className="m-0 p-0 d-flex flex-row align-items-center"> */}
-        <Row className="m-0 p-0 d-flex flex-row align-items-start">
+        <Row className="m-0 p-0 d-flex flex-row align-items-start ">
           <Col md={2}>
-            <h6>Role</h6>
+            <h6>{id === "experience" ? <>Role</> : <>Level of education</>}</h6>
             <hr />
             {/* <Nav variant="pills" className="flex-column"> */}
             <Nav variant="underline" className="flex-column">
@@ -117,8 +120,8 @@ const ExpeduSection = ({ id, title, rawContentArray }) => {
               ))}
             </Nav>
           </Col>
-          <Col md={10}>
-            <h6>Specifics</h6>
+          <Col md={10} className="pt-4 pt-md-0">
+            <h6>Details</h6>
             <hr />
             <Tab.Content>
               {Object.keys(categorizedData).map((key, index) => (
@@ -127,63 +130,61 @@ const ExpeduSection = ({ id, title, rawContentArray }) => {
                     // Separate logic for experience vs. education
                     categorizedData[key].map((data, itemNumber) => (
                       <Fragment key={itemNumber}>
-                        {id === "experience" ? (
+                        {id === "education" ? (
                           <>
-                            <p>
-                              <b>Company: </b>
-                              {data.company}
-                            </p>
+                            <h4>
+                              {data.educationLevel !== "High School" ? (
+                                <>
+                                  {/* Add degree and major */}
+                                  {data.major !== "" ? (
+                                    <>
+                                      {data.degree} in {data.major}
+                                    </>
+                                  ) : (
+                                    <></>
+                                  )}{" "}
+                                  {/* If you have a minor */}
+                                  {data.minor !== "" ? (
+                                    <> with minor in {data.minor}</>
+                                  ) : (
+                                    <></>
+                                  )}
+                                </>
+                              ) : (
+                                <>{data.degree}</>
+                              )}
+                            </h4>
                           </>
                         ) : (
-                          <>
-                            <p>
-                              <b>School: </b>
-                              {data.school}
-                            </p>
-                            <p>
-                              {data.major !== "" ? (
-                                <>
-                                  <b>Major: </b>
-                                  {data.major}
-                                </>
-                              ) : (
-                                <></>
-                              )}
-                            </p>
-                            <p>
-                              {data.minor !== "" ? (
-                                <>
-                                  <b>Minor: </b>
-                                  {data.minor}
-                                </>
-                              ) : (
-                                <></>
-                              )}
-                            </p>
-                          </>
+                          <></>
                         )}
                         <>
-                          <p>
-                            <b>Duration: </b>
+                          <h5>
+                            {id === "experience" ? (
+                              <>{data.company}</>
+                            ) : (
+                              <>{data.school}</>
+                            )}{" "}
+                            |{" "}
                             {data.startMonth !== "" ? (
                               <>
                                 {data.startMonth}, {data.startYear} -{" "}
+                                {data.endMonth !== "" ? (
+                                  <>
+                                    {data.endMonth}, {data.endYear}
+                                  </>
+                                ) : (
+                                  <>{data.endYear}</>
+                                )}
                               </>
                             ) : (
-                              <>{data.startYear} - </>
-                            )}
-                            {data.endMonth !== "" ? (
                               <>
-                                {data.endMonth}, {data.endYear}
+                                {data.startYear} - {data.endYear}
                               </>
-                            ) : (
-                              <>{data.endYear}</>
                             )}
-                          </p>
-                          <p>
-                            <b>Location: </b>
-                            {data.location}
-                          </p>
+                          </h5>
+                          <h6>{data.location}</h6>
+
                           <ul>
                             {Array.isArray(data.description) &&
                             data.description.length ? (
