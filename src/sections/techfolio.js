@@ -3,6 +3,9 @@ import { Fragment, useEffect, useState } from "react";
 import Section from "../components/Section/section";
 import RepoLanguages from "../components/RepoLanguages/RepoLanguages";
 import Loading from "../components/Loading/Loading";
+import { Card, Stack } from "react-bootstrap";
+import { BsGithub } from "react-icons/bs";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const Tech = ({ rawContent }) => {
   const GITHUB_REPO_URL = `https://api.github.com/users/${rawContent.githubUsername}/repos`;
@@ -30,13 +33,32 @@ const Tech = ({ rawContent }) => {
 
   const content = (
     <>
-      {data.map((repo, index) => (
-        <Fragment key={index}>
-          <p>Name: {repo.name}</p>
-          <p>Description: {repo.description}</p>
-          <RepoLanguages languageUrl={repo.languages_url} />
-        </Fragment>
-      ))}
+      <ResponsiveMasonry columnsCountBreakPoints={{ 576: 1, 768: 2, 1200: 3 }}>
+        <Masonry>
+          {data.map((repo, index) => (
+            <Card key={index} className="m-2" style={{ minWidth: "20rem" }}>
+              <Card.Body>
+                <Card.Title>
+                  <Stack
+                    className="d-flex justify-content-between"
+                    direction="horizontal"
+                    gap={3}
+                  >
+                    <div>{repo.name}</div>
+                    <a href={repo.html_url} target="_blank" rel="noreferrer">
+                      <BsGithub />
+                    </a>
+                  </Stack>
+                </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  <RepoLanguages languageUrl={repo.languages_url} />
+                </Card.Subtitle>
+                <Card.Text>{repo.description}</Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
     </>
   );
 

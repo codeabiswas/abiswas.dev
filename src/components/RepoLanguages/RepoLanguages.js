@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import Loading from "../Loading/Loading";
 
 const RepoLanguages = ({ languageUrl }) => {
@@ -30,12 +30,12 @@ const RepoLanguages = ({ languageUrl }) => {
         <></>
       ) : (
         <>
-          <h6>Language(s)</h6>
-          <ul>
-            {Object.keys(data).map((language) => (
-              <li key={language}>{language}</li>
-            ))}
-          </ul>
+          {Object.keys(data).map((language, index) => (
+            <Fragment key={index}>
+              {language}
+              <>{index === Object.keys(data).length - 1 ? <></> : <>, </>}</>
+            </Fragment>
+          ))}
         </>
       )}
     </>
