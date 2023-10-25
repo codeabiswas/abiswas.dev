@@ -53,8 +53,6 @@ const IndexPage = () => {
       .catch(setError);
   }, [pri_gist_api]);
 
-  console.log(pri_gist_api);
-
   if (loading) return <Loading />;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;

@@ -168,10 +168,10 @@ const ExpeduSection = ({ id, title, rawContentArray }) => {
                             |{" "}
                             {data.startMonth !== "" ? (
                               <>
-                                {data.startMonth}, {data.startYear} -{" "}
+                                {data.startMonth} {data.startYear} -{" "}
                                 {data.endMonth !== "" ? (
                                   <>
-                                    {data.endMonth}, {data.endYear}
+                                    {data.endMonth} {data.endYear}
                                   </>
                                 ) : (
                                   <>{data.endYear}</>

@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Section from "../components/Section/section";
-import { Image } from "react-bootstrap";
 import ContactsHolder from "../components/ContactsHolder/ContactsHolder";
 import ContactCard from "../components/ContactCard/ContactCard";
 
@@ -10,7 +9,6 @@ const About = ({ rawAboutContent, rawContactContent }) => {
       {/* Only show in lg and above size screens */}
       <div className="d-flex flex-row align-items-center">
         <div className="d-none d-lg-block pe-lg-4">
-          {console.log(rawAboutContent.profilePictureUrl)}
           <ContactCard
             imgSrc={rawAboutContent.profilePictureUrl}
             rawContactContent={rawContactContent}
