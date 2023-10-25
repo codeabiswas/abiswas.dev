@@ -9,10 +9,14 @@ import {
 } from "react-icons/bs";
 import ContactIcon from "../ContactIcon/ContactIcon";
 
-const ContactsHolder = ({ rawContactContent }) => {
+const ContactsHolder = ({ inCard, rawContactContent }) => {
   return (
     <>
-      <Stack direction="horizontal" gap={4}>
+      <Stack
+        className={inCard ? "d-flex justify-content-between" : ""}
+        direction="horizontal"
+        gap={4}
+      >
         {rawContactContent.contacts.map((contact, index) => (
           <Fragment key={index}>
             {contact.accountType === "linkedin" ? (

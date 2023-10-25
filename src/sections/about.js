@@ -8,23 +8,25 @@ const About = ({ rawAboutContent, rawContactContent }) => {
   const content = (
     <>
       {/* Only show in lg and above size screens */}
-      <div className="d-none d-lg-block">
-        {console.log(rawAboutContent.profilePictureUrl)}
-        <ContactCard
-          imgSrc={rawAboutContent.profilePictureUrl}
-          rawContactContent={rawContactContent}
-        />
-      </div>
-      <div>
-        <h1>
-          Hi! I'm {rawAboutContent.firstName} {rawAboutContent.lastName}.
-        </h1>
-        {rawAboutContent.description.map((paragraphContent, index) => (
-          <p key={index}>{paragraphContent}</p>
-        ))}
-        {/* Only show in md and below size screen */}
-        <div className="d-lg-none">
-          <ContactsHolder rawContactContent={rawContactContent} />
+      <div className="d-flex flex-row align-items-center">
+        <div className="d-none d-lg-block pe-lg-4">
+          {console.log(rawAboutContent.profilePictureUrl)}
+          <ContactCard
+            imgSrc={rawAboutContent.profilePictureUrl}
+            rawContactContent={rawContactContent}
+          />
+        </div>
+        <div className="d-flex flex-column flex-grow-1 ps-lg-4">
+          <h1>
+            Hi! I'm {rawAboutContent.firstName} {rawAboutContent.lastName}.
+          </h1>
+          {rawAboutContent.description.map((paragraphContent, index) => (
+            <p key={index}>{paragraphContent}</p>
+          ))}
+          {/* Only show in md and below size screen */}
+          <div className="d-lg-none">
+            <ContactsHolder rawContactContent={rawContactContent} />
+          </div>
         </div>
       </div>
     </>
