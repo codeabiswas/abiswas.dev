@@ -28,7 +28,7 @@ const ResumeView = (props) => {
           <StyledResumeViewDiv>
             <StyledResumeImage
               src={AndreiBiswasResumeImage}
-              style={{ maxWidth: "75%" }}
+              // style={{ maxWidth: "75%" }}
               title="Resume image"
             />
           </StyledResumeViewDiv>
