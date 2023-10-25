@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Section from "../components/Section/section";
-import { Image, Stack } from "react-bootstrap";
+import { Image, Stack, Row, Col } from "react-bootstrap";
 import {
   BsLinkedin,
   BsGithub,
@@ -12,7 +12,10 @@ import ContactIcon from "../components/ContactIcon/ContactIcon";
 const About = ({ rawAboutContent, rawContactContent }) => {
   const content = (
     <>
-      {/* <Image src={rawAboutContent.profilePictureUrl} /> */}
+      {/* Only show in lg and above screens */}
+      <div className="d-none d-lg-block">
+        <Image src={rawAboutContent.profilePictureUrl} />
+      </div>
       <div>
         <h1>
           Hi! I'm {rawAboutContent.firstName} {rawAboutContent.lastName}.
