@@ -62,7 +62,6 @@ const IndexPage = () => {
   // * https://www.gatsbyjs.com/docs/why-gatsby-uses-graphql/
   // * https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
   const children = (
-    // <main style={{ marginTop: "72px" }}>
     <main>
       <About
         rawAboutContent={JSON.parse(data.files["about.json"].content)}

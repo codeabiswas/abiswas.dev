@@ -35,7 +35,6 @@ const Menu = () => {
       <ResumeView show={showModal} onHide={handleCloseModal} />
 
       <StyledMenu collapseOnSelect>
-        {/* <Container className="justify-content-between"> */}
         <Container fluid="lg">
           <Navbar.Brand href={menuLinks[0].link}>
             ~/{menuLinks[0].name}
