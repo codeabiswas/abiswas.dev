@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect, Fragment } from "react";
 import Loading from "../Loading/Loading";
+import { Placeholder, Card } from "react-bootstrap";
 
 const RepoLanguages = ({ languageUrl }) => {
   // When fetching data from API, there are several states:
@@ -20,7 +21,12 @@ const RepoLanguages = ({ languageUrl }) => {
       .catch(setError);
   }, [languageUrl]);
 
-  if (loading) return <Loading />;
+  if (loading)
+    return (
+      <Placeholder as={Card.Subtitle} animation="wave">
+        <Placeholder xs={6} />
+      </Placeholder>
+    );
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
 
