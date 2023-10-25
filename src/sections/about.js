@@ -1,20 +1,19 @@
 import React, { Fragment } from "react";
 import Section from "../components/Section/section";
-import { Image, Stack, Row, Col } from "react-bootstrap";
-import {
-  BsLinkedin,
-  BsGithub,
-  BsStackOverflow,
-  BsEnvelopeAt,
-} from "react-icons/bs";
-import ContactIcon from "../components/ContactIcon/ContactIcon";
+import { Image } from "react-bootstrap";
+import ContactsHolder from "../components/ContactsHolder/ContactsHolder";
+import ContactCard from "../components/ContactCard/ContactCard";
 
 const About = ({ rawAboutContent, rawContactContent }) => {
   const content = (
     <>
-      {/* Only show in lg and above screens */}
+      {/* Only show in lg and above size screens */}
       <div className="d-none d-lg-block">
-        <Image src={rawAboutContent.profilePictureUrl} />
+        {console.log(rawAboutContent.profilePictureUrl)}
+        <ContactCard
+          imgSrc={rawAboutContent.profilePictureUrl}
+          rawContactContent={rawContactContent}
+        />
       </div>
       <div>
         <h1>
@@ -23,39 +22,10 @@ const About = ({ rawAboutContent, rawContactContent }) => {
         {rawAboutContent.description.map((paragraphContent, index) => (
           <p key={index}>{paragraphContent}</p>
         ))}
-        <Stack direction="horizontal" gap={4}>
-          {rawContactContent.contacts.map((contact, index) => (
-            <Fragment key={index}>
-              {contact.accountType === "linkedin" ? (
-                <ContactIcon
-                  iconObject={<BsLinkedin />}
-                  contactUrl={contact.url}
-                  contactHandle={contact.handle}
-                />
-              ) : contact.accountType === "github" ? (
-                <ContactIcon
-                  iconObject={<BsGithub />}
-                  contactUrl={contact.url}
-                  contactHandle={contact.handle}
-                />
-              ) : contact.accountType === "stackoverflow" ? (
-                <ContactIcon
-                  iconObject={<BsStackOverflow />}
-                  contactUrl={contact.url}
-                  contactHandle={contact.handle}
-                />
-              ) : contact.accountType === "email" ? (
-                <ContactIcon
-                  iconObject={<BsEnvelopeAt />}
-                  contactUrl={contact.url}
-                  contactHandle={contact.handle}
-                />
-              ) : (
-                <></>
-              )}
-            </Fragment>
-          ))}
-        </Stack>
+        {/* Only show in md and below size screen */}
+        <div className="d-lg-none">
+          <ContactsHolder rawContactContent={rawContactContent} />
+        </div>
       </div>
     </>
   );
