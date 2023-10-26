@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 import { Stack } from "react-bootstrap";
 import {
@@ -22,24 +22,28 @@ const ContactsHolder = ({ inCard, rawContactContent }) => {
             {contact.accountType === "linkedin" ? (
               <ContactIcon
                 iconObject={<BsLinkedin />}
+                className="linkedin"
                 contactUrl={contact.url}
                 contactHandle={contact.handle}
               />
             ) : contact.accountType === "github" ? (
               <ContactIcon
                 iconObject={<BsGithub />}
+                className="github"
                 contactUrl={contact.url}
                 contactHandle={contact.handle}
               />
             ) : contact.accountType === "stackoverflow" ? (
               <ContactIcon
                 iconObject={<BsStackOverflow />}
+                className="stackoverflow"
                 contactUrl={contact.url}
                 contactHandle={contact.handle}
               />
             ) : contact.accountType === "email" ? (
               <ContactIcon
                 iconObject={<BsEnvelopeAt />}
+                className="gmail"
                 contactUrl={contact.url}
                 contactHandle={contact.handle}
               />

@@ -24,7 +24,7 @@ const Skills = ({ rawContent }) => {
               {Object.keys(skill).map((category) => (
                 <Card className="m-2" key={category}>
                   <ListGroup variant="flush">
-                    <Card.Header as={"h6"}>
+                    <Card.Header as={"h6"} className="bg-transparent">
                       {category === "Product management" ? (
                         <>
                           <BsBagCheck />{" "}

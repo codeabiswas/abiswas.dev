@@ -2,7 +2,11 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 
 // Import styling
-import "../assets/index.sass";
+import "../scss/index.scss";
+
+import AppleTouchIcon from "../assets/favicons/apple-touch-icon.png";
+import Favicon16x16 from "../assets/favicons/favicon-16x16.png";
+import Favicon32x32 from "../assets/favicons/favicon-32x32.png";
 
 // Import sections
 import About from "../sections/about";
@@ -95,6 +99,9 @@ export const Head = () => {
     <>
       <html lang="en-US" />
       <title>abiswas.dev</title>
+      <link rel="apple-touch-icon" sizes="180x180" href={AppleTouchIcon} />
+      <link rel="icon" type="image/png" sizes="32x32" href={Favicon32x32} />
+      <link rel="icon" type="image/png" sizes="16x16" href={Favicon16x16} />
     </>
   );
 };

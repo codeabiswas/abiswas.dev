@@ -7,6 +7,10 @@
   Gatsby Minimal Starter
 </h1>
 
+## Things that built this site
+
+- https://favicon.io/favicon-generator/
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
