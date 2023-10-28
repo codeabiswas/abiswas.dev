@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Title from "../Title/Title";
-import ExpeduSection from "../ExpeduSection/ExpeduSection";
-import StyledSection from "./Section.styled";
+import Title from "../Title";
+import ExpeduSection from "../ExpeduSection";
+import StyledSection from "./styled";
 
 const Section = ({ id, title, content }) => {
   return (

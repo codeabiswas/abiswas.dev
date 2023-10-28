@@ -1,6 +1,6 @@
 import React from "react";
 import ReactPlayer from "react-player/lazy";
-import Section from "../components/Section/section";
+import Section from "../components/Section";
 
 const Music = ({ rawContent }) => {
   const content = <ReactPlayer width="100%" url={rawContent.url} />;

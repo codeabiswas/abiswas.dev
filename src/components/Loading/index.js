@@ -1,6 +1,6 @@
 import React from "react";
 import { Spinner } from "react-bootstrap";
-import StyledContainer from "./Loading.styled";
+import StyledContainer from "./styled";
 
 const Loading = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Fragment } from "react";
-import Section from "../components/Section/section";
+import Section from "../components/Section";
 import { Card, ListGroup } from "react-bootstrap";
-import StyledResponsiveMasonry from "../components/StyledResponsiveMasonry/StyledResponsiveMasonry";
+import StyledResponsiveMasonry from "../components/StyledResponsiveMasonry";
 import Masonry from "react-responsive-masonry";
 import {
   BsCode,

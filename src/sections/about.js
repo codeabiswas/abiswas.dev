@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import Section from "../components/Section/section";
-import ContactsHolder from "../components/ContactsHolder/ContactsHolder";
-import ContactCard from "../components/ContactCard/ContactCard";
+import Section from "../components/Section";
+import ContactsHolder from "../components/ContactsHolder";
+import ContactCard from "../components/ContactCard";
 
 const About = ({ rawAboutContent, rawContactContent }) => {
   const content = (

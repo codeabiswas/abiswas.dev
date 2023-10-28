@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect, Fragment } from "react";
-import Loading from "../Loading/Loading";
 import { Placeholder, Card } from "react-bootstrap";
 
 const RepoLanguages = ({ languageUrl }) => {

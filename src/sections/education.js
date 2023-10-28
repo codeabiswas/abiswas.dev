@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "../components/Section/section";
+import Section from "../components/Section";
 
 const Education = ({ rawContent }) => {
   return (

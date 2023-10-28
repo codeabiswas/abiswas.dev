@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button, Stack } from "react-bootstrap";
 import AndreiBiswasResumeImage from "../../assets/Andrei_Biswas_Resume.jpg";
 import AndreiBiswasResume from "../../assets/Andrei_Biswas_Resume.pdf";
-import { StyledResumeImage, StyledResumeViewDiv } from "./ResumeView.styled";
+import { StyledResumeImage, StyledResumeViewDiv } from "./styled";
 
 const ResumeView = (props) => {
   return (

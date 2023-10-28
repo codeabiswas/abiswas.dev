@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Section from "../components/Section/section";
-import Loading from "../components/Loading/Loading";
+import Section from "../components/Section";
+import Loading from "../components/Loading";
 import Masonry from "react-responsive-masonry";
-import StyledResponsiveMasonry from "../components/StyledResponsiveMasonry/StyledResponsiveMasonry";
-import RepoCard from "../components/RepoCard/RepoCard";
+import StyledResponsiveMasonry from "../components/StyledResponsiveMasonry";
+import RepoCard from "../components/RepoCard";
 
 const Tech = ({ rawContent }) => {
   const GITHUB_REPO_URL = `https://api.github.com/users/${rawContent.githubUsername}/repos`;

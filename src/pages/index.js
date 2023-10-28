@@ -10,15 +10,14 @@ import Favicon32x32 from "../assets/favicons/favicon-32x32.png";
 
 // Import sections
 import About from "../sections/about";
-import Contact from "../sections/contact";
 import Education from "../sections/education";
 import Experience from "../sections/experience";
 import Music from "../sections/musicfolio";
 import Skills from "../sections/skills";
 import Tech from "../sections/techfolio";
-import Menu from "../components/Menu/Menu";
-import Footer from "../components/Footer/Footer";
-import Loading from "../components/Loading/Loading";
+import Menu from "../components/Menu";
+import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -36,9 +35,10 @@ const IndexPage = () => {
   updateTheme();
 
   // Update theme when the preferred scheme changes
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", updateTheme);
+  // NOTE: Disabling this because it does not update the theme toggle and creates a confusing experience
+  // window
+  //   .matchMedia("(prefers-color-scheme: dark)")
+  //   .addEventListener("change", updateTheme);
 
   // When fetching data from API, there are several states:
   // 1. Loading

@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Card, Stack } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { BsGithub } from "react-icons/bs";
-import RepoLanguages from "../RepoLanguages/RepoLanguages";
+import RepoLanguages from "../RepoLanguages";
 
 const RepoCard = ({ repo }) => {
   return (

@@ -1,15 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import ContactsHolder from "../ContactsHolder/ContactsHolder";
+import ContactsHolder from "../ContactsHolder";
 
 const ContactCard = ({ imgSrc, rawContactContent }) => {
-  // return (
-  //   <>
-  //     <Image src={imgSrc} />
-  //     <ContactsHolder rawContactContent={rawContactContent} />
-  //   </>
-  // );
-
   return (
     <>
       <Card style={{ width: "20rem" }}>

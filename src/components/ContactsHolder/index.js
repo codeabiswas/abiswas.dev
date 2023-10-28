@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { Stack } from "react-bootstrap";
 import {
   BsLinkedin,
@@ -7,7 +6,7 @@ import {
   BsStackOverflow,
   BsEnvelopeAt,
 } from "react-icons/bs";
-import ContactIcon from "../ContactIcon/ContactIcon";
+import ContactIcon from "../ContactIcon";
 
 const ContactsHolder = ({ inCard, rawContactContent }) => {
   return (

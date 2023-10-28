@@ -1,6 +1,5 @@
 import React from "react";
-import { BsHeart } from "react-icons/bs";
-import StyledFooter from "./Footer.styled";
+import StyledFooter from "./styled";
 
 const Footer = () => {
   return (

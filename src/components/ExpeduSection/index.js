@@ -1,7 +1,6 @@
 import React from "react";
 import { Fragment } from "react";
-import { Card, Tab, Row, Col, Nav, Table } from "react-bootstrap";
-import styled from "styled-components";
+import { Tab, Row, Col, Nav } from "react-bootstrap";
 
 // const ExpeduSection = ({ id, title, rawContentArray }) => {
 //   return (

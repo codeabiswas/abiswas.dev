@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { Navbar, Nav, NavDropdown, Container, Modal } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { useStaticQuery, graphql } from "gatsby";
-import { StyledMenu, CollapsibleNavbar } from "./Menu.styled";
-import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import ResumeView from "../ResumeView/ResumeView";
+import { StyledMenu, CollapsibleNavbar } from "./styled";
+import ThemeToggle from "../ThemeToggle";
+import ResumeView from "../ResumeView";
 
 const Menu = () => {
   // Needs to be a static query since navbar links data is a GraphQL query and I need to render this in a component

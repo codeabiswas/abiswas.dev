@@ -1,53 +1,49 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# Andrei Biswas (codeabiswas) Portfolio Website
 
-## Things that built this site
+This is my personal/portfolio website that I built using React. It pulls data all the data from a [GitHub Gist](https://gist.github.com/codeabiswas/ac0204d535a5b7b515c7ddfd8be5671e).
 
-- https://favicon.io/favicon-generator/
+Feel free to use this site as a template to build your own website by forking this repository. Make sure to create a GitHub Gist like above and link it to your own site!
 
-## 🚀 Quick start
+## To develop
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
+1.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    cd abiswas.dev/
+    gatsby develop
     ```
 
-3.  **Open the code and start customizing!**
+2.  **Open the code and start customizing**
 
-    Your site is now running at http://localhost:8000!
+    The site runs locally at http://localhost:8000
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    Edit `src/pages/index.js` to see it update instantaneously.
 
-4.  **Learn more**
+## Project structure
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- `.env.development`
+  - This is a local file which contains the `GATSBY_NEXT_PUBLIC_PRI_GIST_API` variable. This variable is the `api.github.com` link to the gist above.
+- `src/`
+  - `assets/`
+    - Favicon and downloadable objects
+  - `components/`
+    - Any reusable objects used throughout the site. Each folder within it follows the same format as written in `mkcomp` ([a Shell script](https://github.com/codeabiswas/mkcomp) I wrote to create React components in a sane format). If there is no custom styling, there is no `styled.js` associated with that component.
+  - `pages/`
+    - The pages user can navigate to in the site. Currently on `index.js` (landing page, which shows all the `sections/`) and `404.js`.
+  - `scss/`
+    - Only contains `index.scss` that the whole site uses. Only `index.js` should import it.
+  - `sections/`
+    - All the sections of the site
 
-## 🚀 Quick start (Netlify)
+## Special mentions
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+- [React.js Essential Training by Eve Porcello](https://www.linkedin.com/learning/react-js-essential-training-14836121?trk=course_title&upsellOrderOrigin=default_guest_learning): A vital and succinct introduction to the fundamentals of React.
+- [B612 font](https://b612-font.com/): For open-sourcing a font-family designed and tested to be used in aircraft cockpits.
+- [ favicon.io ](https://favicon.io/favicon-generator/): For generating favicons with Google Fonts.
+- Check out the `package.json` to see which libraries I am using! Notably:
+  - Gatsby
+  - React Bootstrap
+  - Bootstrap
+  - Styled Components
