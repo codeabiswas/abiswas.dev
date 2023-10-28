@@ -4,18 +4,29 @@ import { BsMoonStars, BsSun } from "react-icons/bs";
 
 const ThemeToggle = ({ collapseFriendly, label }) => {
   const [themeOption, setThemeOption] = useState(
-    document.querySelector("html").getAttribute("data-bs-theme") === "dark" ? (
-      <BsMoonStars />
+    typeof window !== "undefined" ? (
+      document.querySelector("html").getAttribute("data-bs-theme") ===
+      "dark" ? (
+        <BsMoonStars />
+      ) : (
+        <BsSun />
+      )
     ) : (
       <BsSun />
     )
   );
 
   const changeTheme = (theme) => {
-    // Set new theme
-    document.querySelector("html").setAttribute("data-bs-theme", theme);
-    //  Set toggle label
-    setThemeOption(theme === "dark" ? <BsMoonStars /> : <BsSun />);
+    // Set theme to the user's preferred color scheme
+    // Check if window is defined (so if in the browser and not on the server/node)
+    if (typeof window !== "undefined") {
+      // Set new theme
+      document.querySelector("html").setAttribute("data-bs-theme", theme);
+      //  Set toggle label
+      setThemeOption(theme === "dark" ? <BsMoonStars /> : <BsSun />);
+    } else {
+      <BsSun />;
+    }
   };
 
   return (
@@ -27,10 +38,12 @@ const ThemeToggle = ({ collapseFriendly, label }) => {
         variant="outline-tertiary"
         onClick={() =>
           changeTheme(
-            document.querySelector("html").getAttribute("data-bs-theme") ===
-              "dark"
-              ? "light"
-              : "dark"
+            typeof window !== "undefined"
+              ? document.querySelector("html").getAttribute("data-bs-theme") ===
+                "dark"
+                ? "light"
+                : "dark"
+              : "light"
           )
         }
       >

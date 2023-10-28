@@ -5,10 +5,15 @@ import Menu from "../components/Menu";
 const NotFoundPage = () => {
   // Set theme to the user's preferred color scheme
   function updateTheme() {
-    const colorMode = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+    // Check if window is defined (so if in the browser and not on the server/node)
+    if (typeof window !== "undefined") {
+      const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+
+      document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+    }
   }
 
   // Set theme on load
