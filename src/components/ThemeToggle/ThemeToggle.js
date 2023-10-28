@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { DropdownButton, Form, Stack } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Dropdown, Row, Col } from "react-bootstrap";
 import { BsMoonStars, BsSun } from "react-icons/bs";
 
 const ThemeToggle = ({ collapseFriendly, label }) => {
   const [themeOption, setThemeOption] = useState(
     document.querySelector("html").getAttribute("data-bs-theme") === "dark" ? (
-      <span>
-        <BsMoonStars /> Dark
-      </span>
+      // <span>
+      // <BsMoonStars /> Dark
+      <BsMoonStars />
     ) : (
-      <span>
-        <BsSun /> Light
-      </span>
+      // </span>
+      // <span>
+      // <BsSun /> Light
+      <BsSun />
+      // </span>
     )
   );
 
@@ -36,13 +38,15 @@ const ThemeToggle = ({ collapseFriendly, label }) => {
     //  Set toggle label
     setThemeOption(
       theme === "dark" ? (
-        <span>
-          <BsMoonStars /> Dark
-        </span>
+        <BsMoonStars />
       ) : (
-        <span>
-          <BsSun /> Light
-        </span>
+        // <span>
+        //   <BsMoonStars /> Dark
+        // </span>
+        <BsSun />
+        // <span>
+        //   <BsSun /> Light
+        // </span>
       )
     );
   };
@@ -56,29 +60,49 @@ const ThemeToggle = ({ collapseFriendly, label }) => {
     //     label={`Switch to ${themeOption} mode`}
     //   />
     // </div>
-
-    <div className={collapseFriendly ? "d-lg-none" : "d-none d-lg-block"}>
-      <div className="d-inline-flex flex-row align-items-md-center align-items-start">
-        <div className="pe-2">Theme:</div>
-        <DropdownButton
-          id="theme-toggle-block"
-          size="sm"
-          title={themeOption}
-          variant="outline-primary"
-        >
-          <Dropdown.Item onClick={() => changeTheme("light")}>
-            <span>
-              <BsSun /> Light
-            </span>
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => changeTheme("dark")}>
-            <span>
-              <BsMoonStars /> Dark
-            </span>
-          </Dropdown.Item>
-        </DropdownButton>
-      </div>
+    <div
+      className={collapseFriendly ? "d-lg-none py-2" : "d-none d-lg-block py-2"}
+    >
+      <Button
+        aria-label="Theme toggle"
+        variant="outline-tertiary"
+        onClick={() =>
+          changeTheme(
+            document.querySelector("html").getAttribute("data-bs-theme") ===
+              "dark"
+              ? "light"
+              : "dark"
+          )
+        }
+      >
+        {themeOption}
+      </Button>
     </div>
+
+    // <div
+    //   className={collapseFriendly ? "d-lg-none py-2" : "d-none d-lg-block py-2"}
+    // >
+    //   <div className="d-inline-flex flex-row align-items-md-center align-items-start">
+    //     <div className="pe-2">Theme:</div>
+    //     <DropdownButton
+    //       id="theme-toggle-block"
+    //       size="sm"
+    //       title={themeOption}
+    //       variant="outline-primary"
+    //     >
+    //       <Dropdown.Item onClick={() => changeTheme("light")}>
+    //         <span>
+    //           <BsSun /> Light
+    //         </span>
+    //       </Dropdown.Item>
+    //       <Dropdown.Item onClick={() => changeTheme("dark")}>
+    //         <span>
+    //           <BsMoonStars /> Dark
+    //         </span>
+    //       </Dropdown.Item>
+    //     </DropdownButton>
+    //   </div>
+    // </div>
   );
 };
 
