@@ -75,7 +75,7 @@ const ThemeToggle = ({ collapseFriendly, label }) => {
           )
         }
       >
-        {themeOption}
+        <h5>{themeOption}</h5>
       </Button>
     </div>
 

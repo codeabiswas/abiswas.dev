@@ -72,10 +72,9 @@ $body-secondary-color: $latte-text;
 $body-secondary-bg: $latte-mantle;
 $body-tertiary-color: $latte-text;
 $body-tertiary-bg: $latte-mantle;
-$link-color: $latte-blue;
-$link-hover-color: $latte-blue;
-// $headings-color: $latte-mauve;
-$nav-underline-link-active-color: $latte-blue;
+$link-color: $primary;
+$link-hover-color: $primary;
+$nav-underline-link-active-color: $primary;
 $card-border-color: $latte-overlay2;
 $card-subtitle-color: $latte-subtext1;
 $card-cap-bg: $latte-crust;
@@ -96,10 +95,9 @@ $body-secondary-color-dark: $mocha-text;
 $body-secondary-bg-dark: $mocha-mantle;
 $body-tertiary-color-dark: $mocha-text;
 $body-tertiary-bg-dark: $mocha-mantle;
-$link-color-dark: $mocha-blue;
-$link-hover-color-dark: $mocha-blue;
-// $headings-color-dark: $mocha-mauve;
-$nav-underline-link-active-color-dark: $mocha-blue;
+$link-color-dark: $primary-dark;
+$link-hover-color-dark: $primary-dark;
+$nav-underline-link-active-color-dark: $primary-dark;
 $card-border-color-dark: $mocha-overlay2;
 $card-subtitle-color-dark: $mocha-subtext1;
 
@@ -126,5 +124,16 @@ body {
 
   .gmail {
     color: $gmail-color;
+  }
+
+  .card {
+    // Initial state of the card
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    // State of the card when hovered
+    &:hover {
+      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    }
   }
 }
