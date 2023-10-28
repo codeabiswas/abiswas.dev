@@ -21,7 +21,7 @@ import Loading from "../components/Loading";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
-  const pri_gist_api = process.env.GATSBY_NEXT_PUBLIC_PRI_GIST_API;
+  const pri_gist_api = process.env.GATSBY_PUBLIC_PRI_GIST_API;
 
   // Set theme to the user's preferred color scheme
   function updateTheme() {
