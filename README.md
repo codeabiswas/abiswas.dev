@@ -4,7 +4,7 @@ This is my personal/portfolio website that I built using React. It pulls data al
 
 Feel free to use this site as a template to build your own website by forking this repository. Make sure to create a GitHub Gist like above and link it to your own site!
 
-## To develop
+## Development
 
 1.  **Start developing.**
 
@@ -40,8 +40,10 @@ Feel free to use this site as a template to build your own website by forking th
 ## Special mentions
 
 - [React.js Essential Training by Eve Porcello](https://www.linkedin.com/learning/react-js-essential-training-14836121?trk=course_title&upsellOrderOrigin=default_guest_learning): A vital and succinct introduction to the fundamentals of React.
-- [B612 font](https://b612-font.com/): For open-sourcing a font-family designed and tested to be used in aircraft cockpits.
-- [ favicon.io ](https://favicon.io/favicon-generator/): For generating favicons with Google Fonts.
+- [B612 font](https://b612-font.com/): The open-sourced font family designed and tested to be used in aircraft cockpits.
+- [Catppuccin](https://github.com/catppuccin/catppuccin): The pastel theme that paints the light (latte) and dark (mocha) modes of this website.
+- [favicon.io](https://favicon.io/favicon-generator/): Generates favicons with Google Fonts.
+- [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/overview): Hosts this site
 - Check out the `package.json` to see which libraries I am using! Notably:
   - Gatsby
   - React Bootstrap
