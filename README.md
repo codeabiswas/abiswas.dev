@@ -47,3 +47,7 @@ Feel free to use this site as a template to build your own website by forking th
   - React Bootstrap
   - Bootstrap
   - Styled Components
+
+## License
+
+This project is licensed under MIT License. Read LICENSE for more information.
