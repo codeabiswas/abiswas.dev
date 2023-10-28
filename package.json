@@ -5,7 +5,12 @@
   "description": "abiswas.dev",
   "author": "codeabiswas",
   "keywords": [
-    "gatsby"
+    "personal website",
+    "portfolio website",
+    "react",
+    "gatsby",
+    "react bootstrap",
+    "bootstrap"
   ],
   "scripts": {
     "develop": "gatsby develop",
@@ -29,5 +34,8 @@
     "react-responsive-masonry": "^2.1.7",
     "sass": "^1.69.4",
     "styled-components": "^6.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
