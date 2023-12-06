@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Row } from "react-bootstrap";
 import { useStaticQuery, graphql } from "gatsby";
 import { StyledMenu, CollapsibleNavbar } from "./styled";
 import ThemeToggle from "../ThemeToggle";
@@ -33,7 +33,7 @@ const Menu = () => {
   return (
     <>
       <ResumeView show={showModal} onHide={handleCloseModal} />
-
+      <div class="anim-gradient d-flex p-5" fixed="top" />
       <StyledMenu collapseOnSelect>
         <Container fluid="lg">
           <Navbar.Brand href={menuLinks[0].link}>

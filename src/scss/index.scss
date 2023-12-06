@@ -114,6 +114,21 @@ $gmail-color: #bb001b;
 body {
   font-family: $font-stack;
 
+  .anim-gradient {
+    background: linear-gradient(
+      300deg,
+      $danger,
+      $secondary,
+      $warning,
+      $success,
+      $info,
+      $primary
+    );
+    background-size: 360% 360%;
+    -webkit-animation: gradient-animation 36s ease infinite;
+    animation: gradient-animation 36s ease infinite;
+  }
+
   .linkedin {
     color: $linkedin-color;
   }
