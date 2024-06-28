@@ -1,0 +1,15 @@
+@import "colors.scss";
+
+.light-mode {
+  --background-color: #{$latte-base};
+  --text-color: #{$latte-text};
+  --h1-color: #{$latte-yellow};
+  --span-highlight-color: #{$latte-flamingo};
+}
+
+.dark-mode {
+  --background-color: #{$mocha-base};
+  --text-color: #{$mocha-text};
+  --h1-color: #{$mocha-yellow};
+  --span-highlight-color: #{$mocha-flamingo};
+}

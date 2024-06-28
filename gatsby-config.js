@@ -15,26 +15,26 @@ module.exports = {
         name: "andrei",
         link: "/#about",
       },
-      {
-        name: "experience",
-        link: "/#experience",
-      },
-      {
-        name: "education",
-        link: "/#education",
-      },
-      {
-        name: "skills",
-        link: "/#skills",
-      },
-      {
-        name: "tech",
-        link: "/#tech",
-      },
-      {
-        name: "music",
-        link: "/#music",
-      },
+      // {
+      //   name: "experience",
+      //   link: "/#experience",
+      // },
+      // {
+      //   name: "education",
+      //   link: "/#education",
+      // },
+      // {
+      //   name: "skills",
+      //   link: "/#skills",
+      // },
+      // {
+      //   name: "tech",
+      //   link: "/#tech",
+      // },
+      // {
+      //   name: "music",
+      //   link: "/#music",
+      // },
       // {
       //   name: "contact",
       //   link: "/#contact",
@@ -50,8 +50,9 @@ module.exports = {
         preconnect: [`https://fonts.googleapis.com`],
         web: [
           {
-            name: `B612`,
-            file: `https://fonts.googleapis.com/css2?family=B612&display=swap`,
+            name: `Playfair Display`,
+            // file: `https://fonts.googleapis.com/css2?family=B612&display=swap`,
+            file: `https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap`,
           },
         ],
       },

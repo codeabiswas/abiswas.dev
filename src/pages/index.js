@@ -24,26 +24,16 @@ const IndexPage = () => {
   const pri_gist_api = process.env.GATSBY_PUBLIC_PRI_GIST_API;
 
   // Set theme to the user's preferred color scheme
-  function updateTheme() {
+  const [theme, setTheme] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark-mode"
+      : "light-mode"
+  );
+
+  const toggleTheme = () => {
     // Check if window is defined (so if in the browser and not on the server/node)
-    if (typeof window !== "undefined") {
-      const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-
-      document.querySelector("html").setAttribute("data-bs-theme", colorMode);
-    }
-  }
-
-  // Set theme on load
-  updateTheme();
-
-  // Update theme when the preferred scheme changes
-  // NOTE: Disabling this because it does not update the theme toggle and creates a confusing experience
-  // window
-  //   .matchMedia("(prefers-color-scheme: dark)")
-  //   .addEventListener("change", updateTheme);
+    setTheme(theme === "light-mode" ? "dark-mode" : "light-mode");
+  };
 
   // When fetching data from API, there are several states:
   // 1. Loading
@@ -76,7 +66,7 @@ const IndexPage = () => {
         rawAboutContent={JSON.parse(data.files["about.json"].content)}
         rawContactContent={JSON.parse(data.files["contact.json"].content)}
       />
-      <Experience
+      {/* <Experience
         rawContent={JSON.parse(data.files["experience.json"].content)}
       />
       <Education
@@ -84,15 +74,16 @@ const IndexPage = () => {
       />
       <Skills rawContent={JSON.parse(data.files["skills.json"].content)} />
       <Tech rawContent={JSON.parse(data.files["projects.json"].content)} />
-      <Music rawContent={JSON.parse(data.files["music.json"].content)} />
+      <Music rawContent={JSON.parse(data.files["music.json"].content)} /> */}
     </main>
   );
 
   return (
-    <body>
-      <Menu />
+    <body className={theme}>
+      {/* <Menu /> */}
       {children}
-      <Footer />
+      <button onClick={toggleTheme}>Toggle Theme</button>
+      {/* <Footer /> */}
     </body>
   );
 };

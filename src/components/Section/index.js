@@ -7,14 +7,15 @@ import StyledSection from "./styled";
 const Section = ({ id, title, content }) => {
   return (
     <StyledSection id={id}>
-      <Container fluid="lg" className="py-5">
-        {title ? <Title title={title} /> : <></>}
-        {id === "experience" || id === "education" ? (
-          <ExpeduSection id={id} title={title} rawContentArray={content} />
-        ) : (
-          <>{content}</>
-        )}
-      </Container>
+      {/* <Container fluid="lg" className="py-5"> */}
+      {/* <Container fluid="lg"> */}
+      {title ? <Title title={title} /> : <></>}
+      {id === "experience" || id === "education" ? (
+        <ExpeduSection id={id} title={title} rawContentArray={content} />
+      ) : (
+        <>{content}</>
+      )}
+      {/* </Container> */}
     </StyledSection>
   );
 };
