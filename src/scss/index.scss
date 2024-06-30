@@ -3,7 +3,7 @@
 // Import Bootstrap styles
 @import "bootstrap/scss/bootstrap";
 
-$font-stack: "Playfair Display";
+$font-stack: "Playfair Display", "Playfair Display SC";
 
 body {
   font-family: $font-stack;
@@ -12,30 +12,32 @@ body {
   color: var(--text-color);
 
   h1 {
-    // font-size: 3.44rem;
     font-weight: 600;
     color: var(--h1-color);
   }
 
   h5 {
-    // font-size: 1.25rem;
     font-weight: 500;
+    margin: 0px;
+    padding: 0px;
+
+    &.logo {
+      padding-right: 7px;
+    }
   }
 
   h6 {
+    font-family: "Playfair Display SC";
     padding: 0;
     margin: 0;
   }
 
   img {
     border-radius: 21%;
-    width: 182px;
-    height: 182px;
+    width: 200px;
+    height: 200px;
   }
 
-  // p {
-  // font-size: 18px;
-  // }
   ul {
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */

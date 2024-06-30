@@ -29,16 +29,8 @@ const About = ({
   const content = (
     <>
       {/* Only show in lg and above size screens */}
-      {/* <div className="d-flex flex-row align-items-center"> */}
-      {/* <div className="d-none d-lg-block pe-lg-4">
-          <ContactCard
-            imgSrc={rawAboutContent.profilePictureUrl}
-            rawContactContent={rawContactContent}
-          />
-        </div> */}
-      {/* <div className="d-flex flex-column flex-grow-1 ps-lg-4"> */}
       <Container>
-        <h5 className="m-0 p-0">
+        <h5 className="m-0 p-0" style={{ paddingBottom: "7px" }}>
           My name is{" "}
           <span className="highlight">{rawAboutContent.firstName}</span> and my
           passion is
@@ -47,29 +39,92 @@ const About = ({
           {beforeKeyword}
           <span className="highlight">{afterKeyword}</span>
         </h1>
-        {rawAboutContent.description.map((paragraphContent, index) => (
-          <p key={index} className="m-0 p-0">
-            {paragraphContent}
-          </p>
-        ))}
-        <h6>Learn more through</h6>
+        <div style={{ paddingTop: "21px", paddingBottom: "26px" }}>
+          {rawAboutContent.description.map((paragraphContent, index) => (
+            <p key={index} style={{ marginBottom: "16px" }}>
+              {paragraphContent}
+            </p>
+          ))}
+        </div>
         <Row>
           <Col className="d-flex flex-column justify-content-center">
+            <h6 style={{ marginBottom: "14px" }}>Learn more through</h6>
             <ul>
-              <li>
-                <BsFileEarmarkText /> Resume
+              <li
+                className="d-flex align-items-center"
+                style={{ marginBottom: "12px" }}
+              >
+                <h5 className="d-flex align-items-center logo">
+                  <BsFileEarmarkText />
+                </h5>
+                <a
+                  href={
+                    "https://github.com/codeabiswas/abiswas.dev/blob/main/src/assets/Andrei_Biswas_Resume.pdf"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Resume
+                </a>
               </li>
-              <li>
-                <BsLinkedin /> Professional and education experiences
+              <li
+                className="d-flex align-items-center"
+                style={{ marginBottom: "12px" }}
+              >
+                <h5 className="d-flex align-items-center logo">
+                  <BsLinkedin />
+                </h5>
+                <a
+                  href={"https://www.linkedin.com/in/andreibiswas/"}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Professional and education experiences
+                </a>
               </li>
-              <li>
-                <BsGithub /> Programming projects
+              <li
+                className="d-flex align-items-center"
+                style={{ marginBottom: "12px" }}
+              >
+                <h5 className="d-flex align-items-center logo">
+                  <BsGithub />
+                </h5>
+                <a
+                  href={"https://github.com/codeabiswas"}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Programming projects
+                </a>
               </li>
-              <li>
-                <BsMusicNoteList /> Original music
+              <li
+                className="d-flex align-items-center"
+                style={{ marginBottom: "12px" }}
+              >
+                <h5 className="d-flex align-items-center logo">
+                  <BsMusicNoteList />
+                </h5>
+                <a
+                  href={
+                    "https://soundcloud.com/music-andrei/sets/tracks-i-made"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Original music
+                </a>
               </li>
-              <li>
-                <BsEnvelope /> Email
+              <li className="d-flex align-items-center">
+                <h5 className="d-flex align-items-center logo">
+                  <BsEnvelope />
+                </h5>
+                <a
+                  href={"mailto:andrei.biswas@gmail.com"}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Email
+                </a>
               </li>
             </ul>
           </Col>
@@ -77,18 +132,21 @@ const About = ({
             <img
               src={rawAboutContent.profilePictureUrl}
               className="float-end"
-              alt="..."
+              alt={
+                "Profile picture of " +
+                rawAboutContent.firstName +
+                " " +
+                rawAboutContent.lastName
+              }
             />
           </Col>
         </Row>
-        <ThemeToggle theme={theme} handleThemeChange={handleThemeChange} />
       </Container>
-      {/* Only show in md and below size screen */}
-      {/* <div className="d-lg-none">
-            <ContactsHolder rawContactContent={rawContactContent} />
-          </div> */}
-      {/* </div> */}
-      {/* </div> */}
+      <Container>
+        <footer>
+          <ThemeToggle theme={theme} handleThemeChange={handleThemeChange} />
+        </footer>
+      </Container>
     </>
   );
 
