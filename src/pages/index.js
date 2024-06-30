@@ -11,6 +11,7 @@ import Favicon32x32 from "../assets/favicons/favicon-32x32.png";
 // Import sections
 import About from "../sections/about";
 import Loading from "../components/Loading";
+import { Container } from "react-bootstrap";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -57,12 +58,14 @@ const IndexPage = () => {
   // * https://stackoverflow.com/questions/49299309/gatsbyjs-getting-data-from-restful-api
   const children = (
     <main>
-      <About
-        rawAboutContent={JSON.parse(data.files["about.json"].content)}
-        rawContactContent={JSON.parse(data.files["contact.json"].content)}
-        theme={theme}
-        handleThemeChange={toggleTheme}
-      />
+      <Container>
+        <About
+          rawAboutContent={JSON.parse(data.files["about.json"].content)}
+          rawContactContent={JSON.parse(data.files["contact.json"].content)}
+          theme={theme}
+          handleThemeChange={toggleTheme}
+        />
+      </Container>
     </main>
   );
 
@@ -75,7 +78,7 @@ export const Head = () => {
   return (
     <>
       <html lang="en-US" />
-      <title>abiswas.dev</title>
+      <title>Andrei Biswas</title>
       <link rel="apple-touch-icon" sizes="180x180" href={AppleTouchIcon} />
       <link rel="icon" type="image/png" sizes="32x32" href={Favicon32x32} />
       <link rel="icon" type="image/png" sizes="16x16" href={Favicon16x16} />

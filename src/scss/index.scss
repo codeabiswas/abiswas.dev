@@ -3,20 +3,24 @@
 // Import Bootstrap styles
 @import "bootstrap/scss/bootstrap";
 
-$font-stack: "Playfair Display", "Playfair Display SC";
+$main-font: "Alata";
+$heading-font: "Playfair Display";
+$subheading-font: "Playfair Display SC";
 
 body {
-  font-family: $font-stack;
+  font-family: $main-font;
 
   background-color: var(--background-color);
   color: var(--text-color);
 
   h1 {
+    font-family: $heading-font;
     font-weight: 600;
     color: var(--h1-color);
   }
 
   h5 {
+    font-family: $heading-font;
     font-weight: 500;
     margin: 0px;
     padding: 0px;
@@ -26,10 +30,27 @@ body {
     }
   }
 
+  h4 {
+    font-family: $heading-font;
+    // font-size: 49px;
+    font-size: 42px;
+    color: var(--span-highlight-color);
+    margin: 0px;
+    padding-right: 14px;
+  }
+
   h6 {
-    font-family: "Playfair Display SC";
+    font-family: $subheading-font;
     padding: 0;
     margin: 0;
+  }
+
+  p {
+    font-size: large;
+  }
+
+  footer {
+    font-size: small;
   }
 
   img {
@@ -46,5 +67,9 @@ body {
 
   span.highlight {
     color: var(--span-highlight-color);
+  }
+
+  span.textLogo {
+    font-size: 21px;
   }
 }

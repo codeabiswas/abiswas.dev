@@ -3,31 +3,49 @@ import { Container } from "react-bootstrap";
 
 const ThemeToggle = ({ theme, handleThemeChange }) => {
   return (
-    <Container className="d-flex flex-row justify-content-center m-0 p-0">
-      <small className="m-0 p-0">
+    <Container className="d-flex flex-row justify-content-end m-0 p-0">
+      <p className="m-0 p-0" style={{ fontSize: "medium" }}>
         Theme:{" "}
-        <span
+        {/* <span
+          className="themeToggle"
           onClick={() => handleThemeChange("light-mode")}
           style={{
             cursor: "pointer",
-            textDecoration: "underline",
-            fontWeight: theme === "light-mode" ? "bold" : "normal",
+            // textDecoration: "underline",
+            textDecoration: theme === "light-mode" ? "underline" : "none",
+          }}
+        > */}
+        <button
+          onClick={() => handleThemeChange("light-mode")}
+          style={{
+            textDecoration: theme === "light-mode" ? "underline" : "none",
+            padding: "0px",
+            margin: "0px",
           }}
         >
           Light
-        </span>{" "}
-        |{" "}
-        <span
+        </button>
+        {/* </span>{" "} */} |{" "}
+        {/* <span
+          className="themeToggle"
           onClick={() => handleThemeChange("dark-mode")}
           style={{
             cursor: "pointer",
-            textDecoration: "underline",
-            fontWeight: theme === "dark-mode" ? "bold" : "normal",
+            textDecoration: theme === "dark-mode" ? "underline" : "none",
+          }}
+        > */}
+        <button
+          onClick={() => handleThemeChange("dark-mode")}
+          style={{
+            textDecoration: theme === "dark-mode" ? "underline" : "none",
+            padding: "0px",
+            margin: "0px",
           }}
         >
           Dark
-        </span>
-      </small>
+        </button>
+        {/* </span> */}
+      </p>
     </Container>
   );
 };

@@ -8,7 +8,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `abiswas.dev`,
+    title: `Andrei Biswas`,
+    description: `Portfolio website for Andrei Biswas`,
     siteUrl: `https://www.abiswas.dev`,
     menuLinks: [
       {
@@ -56,6 +57,10 @@ module.exports = {
           {
             name: `Playfair Display SC`,
             file: `https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap`,
+          },
+          {
+            name: `Alata`,
+            file: `https://fonts.googleapis.com/css2?family=Alata&display=swap`,
           },
         ],
       },
