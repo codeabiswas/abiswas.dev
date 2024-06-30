@@ -73,7 +73,7 @@ const About = ({
               </li>
             </ul>
           </Col>
-          <Col>
+          <Col className="d-none d-sm-block">
             <img
               src={rawAboutContent.profilePictureUrl}
               className="float-end"
