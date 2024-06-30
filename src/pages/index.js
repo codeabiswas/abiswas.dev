@@ -10,13 +10,6 @@ import Favicon32x32 from "../assets/favicons/favicon-32x32.png";
 
 // Import sections
 import About from "../sections/about";
-import Education from "../sections/education";
-import Experience from "../sections/experience";
-import Music from "../sections/musicfolio";
-import Skills from "../sections/skills";
-import Tech from "../sections/techfolio";
-import Menu from "../components/Menu";
-import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 
 const IndexPage = () => {
@@ -30,9 +23,10 @@ const IndexPage = () => {
       : "light-mode"
   );
 
-  const toggleTheme = () => {
+  const toggleTheme = (selectedTheme) => {
     // Check if window is defined (so if in the browser and not on the server/node)
-    setTheme(theme === "light-mode" ? "dark-mode" : "light-mode");
+    // setTheme(theme === "light-mode" ? "dark-mode" : "light-mode");
+    setTheme(selectedTheme);
   };
 
   // When fetching data from API, there are several states:
@@ -44,13 +38,14 @@ const IndexPage = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    document.body.className = theme;
     setLoading(true);
     fetch(pri_gist_api)
       .then((response) => response.json())
       .then(setData)
       .then(() => setLoading(false))
       .catch(setError);
-  }, [pri_gist_api]);
+  }, [theme, pri_gist_api]);
 
   if (loading) return <Loading />;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
@@ -65,27 +60,13 @@ const IndexPage = () => {
       <About
         rawAboutContent={JSON.parse(data.files["about.json"].content)}
         rawContactContent={JSON.parse(data.files["contact.json"].content)}
+        theme={theme}
+        handleThemeChange={toggleTheme}
       />
-      {/* <Experience
-        rawContent={JSON.parse(data.files["experience.json"].content)}
-      />
-      <Education
-        rawContent={JSON.parse(data.files["education.json"].content)}
-      />
-      <Skills rawContent={JSON.parse(data.files["skills.json"].content)} />
-      <Tech rawContent={JSON.parse(data.files["projects.json"].content)} />
-      <Music rawContent={JSON.parse(data.files["music.json"].content)} /> */}
     </main>
   );
 
-  return (
-    <body className={theme}>
-      {/* <Menu /> */}
-      {children}
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      {/* <Footer /> */}
-    </body>
-  );
+  return <body className={theme}>{children}</body>;
 };
 
 export default IndexPage;

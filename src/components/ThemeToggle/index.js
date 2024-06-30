@@ -1,55 +1,34 @@
-import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-import { BsMoonStars, BsSun } from "react-icons/bs";
+import React from "react";
+import { Container } from "react-bootstrap";
 
-const ThemeToggle = ({ collapseFriendly, label }) => {
-  const [themeOption, setThemeOption] = useState(
-    typeof window !== "undefined" ? (
-      document.querySelector("html").getAttribute("data-bs-theme") ===
-      "dark" ? (
-        <BsMoonStars />
-      ) : (
-        <BsSun />
-      )
-    ) : (
-      <BsSun />
-    )
-  );
-
-  const changeTheme = (theme) => {
-    // Set theme to the user's preferred color scheme
-    // Check if window is defined (so if in the browser and not on the server/node)
-    if (typeof window !== "undefined") {
-      // Set new theme
-      document.querySelector("html").setAttribute("data-bs-theme", theme);
-      //  Set toggle label
-      setThemeOption(theme === "dark" ? <BsMoonStars /> : <BsSun />);
-    } else {
-      <BsSun />;
-    }
-  };
-
+const ThemeToggle = ({ theme, handleThemeChange }) => {
   return (
-    <div
-      className={collapseFriendly ? "d-lg-none py-2" : "d-none d-lg-block py-2"}
-    >
-      <Button
-        aria-label="Theme toggle"
-        variant="outline-tertiary"
-        onClick={() =>
-          changeTheme(
-            typeof window !== "undefined"
-              ? document.querySelector("html").getAttribute("data-bs-theme") ===
-                "dark"
-                ? "light"
-                : "dark"
-              : "light"
-          )
-        }
-      >
-        <h5>{themeOption}</h5>
-      </Button>
-    </div>
+    <Container className="d-flex flex-row justify-content-center m-0 p-0">
+      <small className="m-0 p-0">
+        Theme:{" "}
+        <span
+          onClick={() => handleThemeChange("light-mode")}
+          style={{
+            cursor: "pointer",
+            textDecoration: "underline",
+            fontWeight: theme === "light-mode" ? "bold" : "normal",
+          }}
+        >
+          Light
+        </span>{" "}
+        |{" "}
+        <span
+          onClick={() => handleThemeChange("dark-mode")}
+          style={{
+            cursor: "pointer",
+            textDecoration: "underline",
+            fontWeight: theme === "dark-mode" ? "bold" : "normal",
+          }}
+        >
+          Dark
+        </span>
+      </small>
+    </Container>
   );
 };
 

@@ -3,7 +3,6 @@
 // Import Bootstrap styles
 @import "bootstrap/scss/bootstrap";
 
-// $font-stack: "Playfair Display", sans-serif;
 $font-stack: "Playfair Display";
 
 body {
@@ -13,18 +12,34 @@ body {
   color: var(--text-color);
 
   h1 {
-    font-size: 55px;
+    // font-size: 3.44rem;
     font-weight: 600;
     color: var(--h1-color);
   }
 
   h5 {
-    font-size: 20px;
+    // font-size: 1.25rem;
     font-weight: 500;
   }
 
-  p {
-    font-size: 18px;
+  h6 {
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    border-radius: 21%;
+    width: 182px;
+    height: 182px;
+  }
+
+  // p {
+  // font-size: 18px;
+  // }
+  ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
   }
 
   span.highlight {
