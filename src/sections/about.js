@@ -1,18 +1,6 @@
-import React, { Fragment } from "react";
-import Section from "../components/Section";
-import ContactsHolder from "../components/ContactsHolder";
-import ContactCard from "../components/ContactCard";
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { BsSunFill } from "react-icons/bs";
 import ThemeToggle from "../components/ThemeToggle";
-import {
-  BsGithub,
-  BsLinkedin,
-  BsEnvelope,
-  BsFileEarmarkText,
-  BsMusicNoteList,
-  BsCircleFill,
-  BsSunFill,
-} from "react-icons/bs";
 import LinksPicContainer from "../components/LinksPicContainer";
 
 const About = ({
