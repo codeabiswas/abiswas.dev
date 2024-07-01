@@ -5,6 +5,7 @@
   --text-color: #{$latte-text};
   --h1-color: #{$latte-yellow};
   --span-highlight-color: #{$latte-flamingo};
+  --link-color: #{$latte-blue};
 }
 
 .dark-mode {
@@ -12,4 +13,5 @@
   --text-color: #{$mocha-text};
   --h1-color: #{$mocha-yellow};
   --span-highlight-color: #{$mocha-flamingo};
+  --link-color: #{$mocha-blue};
 }

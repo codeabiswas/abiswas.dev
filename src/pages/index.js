@@ -12,6 +12,8 @@ import Favicon32x32 from "../assets/favicons/favicon-32x32.png";
 import About from "../sections/about";
 import Loading from "../components/Loading";
 import { Container } from "react-bootstrap";
+import Footer from "../components/Footer";
+import Section from "../components/Section";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -65,11 +67,16 @@ const IndexPage = () => {
           theme={theme}
           handleThemeChange={toggleTheme}
         />
+        <Footer />
       </Container>
     </main>
   );
 
-  return <body className={theme}>{children}</body>;
+  return (
+    <body className={theme}>
+      <Section content={children} />
+    </body>
+  );
 };
 
 export default IndexPage;
