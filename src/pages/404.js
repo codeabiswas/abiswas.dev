@@ -1,6 +1,5 @@
 import * as React from "react";
-import Section from "../components/Section";
-import Menu from "../components/Menu";
+import { Container } from "react-bootstrap";
 
 const NotFoundPage = () => {
   // Set theme to the user's preferred color scheme
@@ -22,17 +21,12 @@ const NotFoundPage = () => {
   return (
     <body>
       <main>
-        <Menu />
-        <Section
-          title={"This page does not exist...yet? 🤔"}
-          id={""}
-          content={
-            <>
-              Until then, check out my{" "}
-              <a href="https://www.abiswas.dev">site</a>!
-            </>
-          }
-        />
+        <Container>
+          <h1>This page does not exist...yet? 🤔</h1>
+          <p>
+            Until then, check out my <a href="https://www.abiswas.dev">site</a>!
+          </p>
+        </Container>
       </main>
     </body>
   );

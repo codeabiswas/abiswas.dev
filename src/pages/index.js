@@ -8,12 +8,15 @@ import AppleTouchIcon from "../assets/favicons/apple-touch-icon.png";
 import Favicon16x16 from "../assets/favicons/favicon-16x16.png";
 import Favicon32x32 from "../assets/favicons/favicon-32x32.png";
 
+import { Container } from "react-bootstrap";
+
 // Import sections
 import About from "../sections/about";
 import Loading from "../components/Loading";
-import { Container } from "react-bootstrap";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+import Header from "../components/Header";
+import LinksPicContainer from "../components/LinksPicContainer";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -54,6 +57,9 @@ const IndexPage = () => {
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
 
+  const rawAboutContent = JSON.parse(data.files["about.json"].content);
+  const rawContactContent = JSON.parse(data.files["contact.json"].content);
+
   // TODO: Use GraphQL to load data from GitHub Gist
   // The following resources should help with this:
   // * https://www.gatsbyjs.com/docs/why-gatsby-uses-graphql/
@@ -61,11 +67,18 @@ const IndexPage = () => {
   const children = (
     <main>
       <Container>
+        <Header theme={theme} handleThemeChange={toggleTheme} />
         <About
-          rawAboutContent={JSON.parse(data.files["about.json"].content)}
-          rawContactContent={JSON.parse(data.files["contact.json"].content)}
+          rawAboutContent={rawAboutContent}
+          rawContactContent={rawContactContent}
           theme={theme}
           handleThemeChange={toggleTheme}
+        />
+        <LinksPicContainer
+          rawContactContent={rawContactContent}
+          profilePictureUrl={rawAboutContent.profilePictureUrl}
+          firstName={rawAboutContent.firstName}
+          lastName={rawAboutContent.lastName}
         />
         <Footer />
       </Container>

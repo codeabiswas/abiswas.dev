@@ -6,30 +6,16 @@ const ThemeButton = ({ theme, handleThemeChange, checked }) => {
   return (
     <>
       <Col className="d-flex flex-column justify-content-center">
-        <input
-          type="radio"
-          className="btn-check"
-          id={theme === "dark" ? "dark-outlined" : "light-outlined"}
-          onChange={handleThemeChange}
-          checked={checked}
-        />
-        <label
-          className="btn btn-outline-primary"
-          htmlFor={theme === "dark" ? "dark-outlined" : "light-outlined"}
-        >
+        <button onClick={handleThemeChange} type="button">
           <div className="d-flex align-items-center">
             <div className="d-none d-sm-block">
               <h5 className="d-flex align-items-center logo">
-                {theme === "dark" ? (
-                  <BsLightbulbOffFill />
-                ) : (
-                  <BsLightbulbFill />
-                )}
+                {checked ? <BsLightbulbOffFill /> : <BsLightbulbFill />}
               </h5>
             </div>
-            <small>{theme === "dark" ? <>Dark</> : <>Light</>}</small>
+            <small>{checked ? <>Turn light off</> : <>Turn light on</>}</small>
           </div>
-        </label>
+        </button>
       </Col>
     </>
   );

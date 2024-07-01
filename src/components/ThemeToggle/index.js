@@ -1,11 +1,5 @@
-import React, { Fragment } from "react";
-import { Row, Col } from "react-bootstrap";
-import {
-  BsLightbulbFill,
-  BsLightbulbOffFill,
-  BsMoonStarsFill,
-  BsSunriseFill,
-} from "react-icons/bs";
+import React from "react";
+import { Row } from "react-bootstrap";
 import ThemeButton from "../ThemeButton";
 
 const ThemeToggle = ({ theme, handleThemeChange }) => {
@@ -13,13 +7,11 @@ const ThemeToggle = ({ theme, handleThemeChange }) => {
     <>
       <Row className="ms-auto float-end">
         <ThemeButton
-          theme="dark"
-          handleThemeChange={() => handleThemeChange("dark-mode")}
-          checked={theme === "dark-mode"}
-        />
-        <ThemeButton
-          theme="light"
-          handleThemeChange={() => handleThemeChange("light-mode")}
+          handleThemeChange={
+            theme === "dark-mode"
+              ? () => handleThemeChange("light-mode")
+              : () => handleThemeChange("dark-mode")
+          }
           checked={theme === "light-mode"}
         />
       </Row>

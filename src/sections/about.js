@@ -1,14 +1,6 @@
 import React from "react";
-import { BsSunFill } from "react-icons/bs";
-import ThemeToggle from "../components/ThemeToggle";
-import LinksPicContainer from "../components/LinksPicContainer";
 
-const About = ({
-  rawAboutContent,
-  rawContactContent,
-  theme,
-  handleThemeChange,
-}) => {
+const About = ({ rawAboutContent }) => {
   // Set up the heading to have the right colors for emphasis
   const heading = rawAboutContent.heading;
   const keyword = rawAboutContent.keyword;
@@ -19,47 +11,29 @@ const About = ({
 
   const content = (
     <>
-      <span
-        className="d-flex align-items-center"
-        style={{ marginTop: "58px", marginBottom: "58px" }}
-      >
-        <h4 className="d-flex align-items-center">
-          {/* <BsCircleFill /> */}
-          <BsSunFill />
-        </h4>
-        <span className="textLogo">ANDREI</span>
-        <ThemeToggle theme={theme} handleThemeChange={handleThemeChange} />
-      </span>
-      <h5 className="m-0 p-0" style={{ paddingBottom: "7px" }}>
+      <h5>
         My name is{" "}
         <span className="highlight">{rawAboutContent.firstName}</span> and my
         passion is
       </h5>
-      <h1 className="display-4 m-0 p-0">
+      <h1 className="display-4">
         {beforeKeyword}
         <span className="highlight">{afterKeyword}</span>
       </h1>
-      <div style={{ paddingTop: "21px", paddingBottom: "42px" }}>
+      <div className="text-blurb">
         {rawAboutContent.description.map((paragraphContent, index) => (
           <p
             key={index}
-            style={{
-              marginBottom:
-                index === rawAboutContent.description.length - 1
-                  ? "0px"
-                  : "16px",
-            }}
+            className={
+              index === rawAboutContent.description.length - 1
+                ? "last-text"
+                : ""
+            }
           >
             {paragraphContent}
           </p>
         ))}
       </div>
-      <LinksPicContainer
-        rawContactContent={rawContactContent}
-        profilePictureUrl={rawAboutContent.profilePictureUrl}
-        firstName={rawAboutContent.firstName}
-        lastName={rawAboutContent.lastName}
-      />
     </>
   );
 
