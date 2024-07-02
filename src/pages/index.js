@@ -2,21 +2,22 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 
 // Import styling
-import "../scss/index.scss";
+import "../scss/main.scss";
 
-import AppleTouchIcon from "../assets/favicons/apple-touch-icon.png";
-import Favicon16x16 from "../assets/favicons/favicon-16x16.png";
-import Favicon32x32 from "../assets/favicons/favicon-32x32.png";
+import AppleTouchIcon from "../assets/icons/apple-touch-icon.png";
+import Favicon16x16 from "../assets/icons/favicon-16x16.png";
+import Favicon32x32 from "../assets/icons/favicon-32x32.png";
+import Favicon from "../assets/icons/favicon.ico";
 
 import { Container } from "react-bootstrap";
 
 // Import sections
-import About from "../sections/about";
-import Loading from "../components/Loading";
-import Footer from "../components/Footer";
-import Section from "../components/Section";
-import Header from "../components/Header";
-import LinksPicContainer from "../components/LinksPicContainer";
+import AboutSection from "../sections/AboutSection";
+import Loading from "../components/common/Loading";
+import Footer from "../components/common/Footer";
+import Section from "../components/common/Section";
+import Header from "../components/common/Header";
+import LinksPicContainer from "../components/common/LinksPicContainer";
 
 const IndexPage = () => {
   // Retrieve the Personal Resume Information (PRI) Gist API
@@ -68,7 +69,7 @@ const IndexPage = () => {
     <main>
       <Container>
         <Header theme={theme} handleThemeChange={toggleTheme} />
-        <About
+        <AboutSection
           rawAboutContent={rawAboutContent}
           rawContactContent={rawContactContent}
           theme={theme}
@@ -102,6 +103,8 @@ export const Head = () => {
       <link rel="apple-touch-icon" sizes="180x180" href={AppleTouchIcon} />
       <link rel="icon" type="image/png" sizes="32x32" href={Favicon32x32} />
       <link rel="icon" type="image/png" sizes="16x16" href={Favicon16x16} />
+      <link rel="icon" type="image/x-icon" href={Favicon} />
+      <link rel="shortcut icon" type="image/x-icon" href={Favicon} />
     </>
   );
 };

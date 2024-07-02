@@ -1,6 +1,6 @@
 import React from "react";
 
-const About = ({ rawAboutContent }) => {
+const AboutSection = ({ rawAboutContent }) => {
   // Set up the heading to have the right colors for emphasis
   const heading = rawAboutContent.heading;
   const keyword = rawAboutContent.keyword;
@@ -40,4 +40,4 @@ const About = ({ rawAboutContent }) => {
   return <>{content}</>;
 };
 
-export default About;
+export default AboutSection;

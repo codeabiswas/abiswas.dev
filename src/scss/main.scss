@@ -76,12 +76,16 @@ body {
     margin: 0 0 0 0;
   }
 
-  span.highlight {
-    color: var(--span-highlight-color);
-  }
-
-  span.text-logo {
-    font-size: 21px;
+  span {
+    &.highlight {
+      color: var(--span-highlight-color);
+    }
+    &.text-logo {
+      font-size: 21px;
+    }
+    &.header {
+      margin: 58px 0 58px 0;
+    }
   }
 
   div.text-blurb {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "react-bootstrap";
-import ThemeButton from "../ThemeButton";
+import ThemeButton from "../../ui/ThemeButton";
 
 const ThemeToggle = ({ theme, handleThemeChange }) => {
   return (
