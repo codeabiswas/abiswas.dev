@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../Logo";
-import ThemeToggle from "../ThemeToggle";
+import ThemeToggleButton from "../ThemeToggleButton";
 import Span from "../../ui/Span";
 
 const Header = ({ theme, handleThemeChange }) => {
@@ -9,7 +9,10 @@ const Header = ({ theme, handleThemeChange }) => {
       children={
         <>
           <Logo />
-          <ThemeToggle theme={theme} handleThemeChange={handleThemeChange} />
+          <ThemeToggleButton
+            theme={theme}
+            handleThemeChange={handleThemeChange}
+          />
         </>
       }
     />

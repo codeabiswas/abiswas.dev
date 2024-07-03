@@ -1,11 +1,10 @@
 import React from "react";
-import StyledFooter from "./styled";
 
 const Footer = () => {
   return (
-    <StyledFooter>
+    <footer className="d-flex justify-content-center">
       Made with ❤️ by Andrei Biswas | {`${new Date().getFullYear()}`}
-    </StyledFooter>
+    </footer>
   );
 };
 

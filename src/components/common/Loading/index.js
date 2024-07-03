@@ -1,22 +1,14 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
-import StyledContainer from "./styled";
+import MainLayout from "../../layout/MainLayout";
+import LoadingEllipsis from "../../ui/LoadingEllipsis";
 
 const Loading = () => {
-  return (
+  const children = (
     <>
-      <StyledContainer>
-        <div>
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        </div>
-        <div>
-          <h3>Loading...</h3>
-        </div>
-      </StyledContainer>
+      <LoadingEllipsis />
     </>
   );
+  return <MainLayout children={children} />;
 };
 
 export default Loading;

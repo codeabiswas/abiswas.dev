@@ -1,104 +1,15 @@
-@import "themes.scss";
+@import "base/themes";
+@import "base/variables";
 
 // Import Bootstrap styles
 @import "bootstrap/scss/bootstrap";
 
-$main-font: "Alata";
-$heading-font: "Playfair Display";
-$subheading-font: "Playfair Display SC";
-
-body {
-  font-family: $main-font;
-
-  background-color: var(--background-color);
-  color: var(--text-color);
-
-  h1 {
-    font-family: $heading-font;
-    font-weight: 600;
-    color: var(--h1-color);
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-  }
-
-  h5 {
-    font-family: $heading-font;
-    font-weight: 500;
-    margin: 0 0 7px 0;
-    padding: 0 0 0 0;
-
-    &.logo {
-      margin: 0 7px 0 0;
-    }
-  }
-
-  h4 {
-    font-family: $heading-font;
-    font-size: 42px;
-    color: var(--span-highlight-color);
-    margin: 0 14px 0 0;
-    padding: 0 0 0 0;
-  }
-
-  h6 {
-    font-family: $subheading-font;
-    margin: 0 0 14px 0;
-    padding: 0 0 0 0;
-  }
-
-  p {
-    font-size: large;
-    margin: 0 0 16px 0;
-
-    &.last-text {
-      margin: 0 0 0 0;
-    }
-  }
-
-  a {
-    color: var(--link-color);
-  }
-
-  footer {
-    font-size: small;
-    margin: 58px 0 58px 0;
-  }
-
-  img {
-    border-radius: 21%;
-    width: 200px;
-    height: 200px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-  }
-
-  span {
-    &.highlight {
-      color: var(--span-highlight-color);
-    }
-    &.text-logo {
-      font-size: 21px;
-    }
-    &.header {
-      margin: 58px 0 58px 0;
-    }
-  }
-
-  div.text-blurb {
-    margin: 21px 0 42px 0;
-  }
-
-  button {
-    background-color: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
-    border-radius: 7px;
-    outline: none;
-    padding: 7px;
-    cursor: pointer;
-  }
-}
+@import "./components/button";
+@import "./components/font";
+@import "./components/body";
+@import "./components/link";
+@import "./components/footer";
+@import "./components/list";
+@import "./components/span";
+@import "./components/div";
+@import "./components/image";
