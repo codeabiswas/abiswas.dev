@@ -30,10 +30,16 @@ Feel free to use this site as a template to build your own website by forking th
     - Favicon and downloadable objects
   - `components/`
     - Any reusable objects used throughout the site. Each folder within it follows the same format as written in `mkcomp` ([a Shell script](https://github.com/codeabiswas/mkcomp) I wrote to create React components in a sane format). If there is no custom styling, there is no `styled.js` associated with that component.
+  - `hooks`
+    - Reusable React Hooks, for example `useTheme.js` that is used across the website.
+  - `utils`
+    - Reusable JS functions. Currently empty.
+  - `providers`
+    - Provides context for the site. Primarily used for setting the theme across different pages.
   - `pages/`
     - The pages user can navigate to in the site. Currently on `index.js` (landing page, which shows all the `sections/`) and `404.js`.
   - `scss/`
-    - Only contains `index.scss` that the whole site uses. Only `index.js` should import it.
+    - Styles for the entire project. `main.scss` gets imported by `index.js` only.
   - `sections/`
     - All the sections of the site
 

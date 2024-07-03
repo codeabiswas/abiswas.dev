@@ -1,0 +1,15 @@
+@import "base/themes";
+@import "base/variables";
+
+// Import Bootstrap styles
+@import "bootstrap/scss/bootstrap";
+
+@import "./components/button";
+@import "./components/font";
+@import "./components/body";
+@import "./components/link";
+@import "./components/footer";
+@import "./components/list";
+@import "./components/span";
+@import "./components/div";
+@import "./components/image";

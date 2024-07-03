@@ -1,43 +1,17 @@
 import * as React from "react";
-import Section from "../components/Section";
-import Menu from "../components/Menu";
+import MainLayout from "../components/layout/MainLayout";
 
 const NotFoundPage = () => {
-  // Set theme to the user's preferred color scheme
-  function updateTheme() {
-    // Check if window is defined (so if in the browser and not on the server/node)
-    if (typeof window !== "undefined") {
-      const colorMode = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-
-      document.querySelector("html").setAttribute("data-bs-theme", colorMode);
-    }
-  }
-
-  // Set theme on load
-  updateTheme();
-
-  return (
-    <body>
-      <main>
-        <Menu />
-        <Section
-          title={"This page does not exist...yet? 🤔"}
-          id={""}
-          content={
-            <>
-              Until then, check out my{" "}
-              <a href="https://www.abiswas.dev">site</a>!
-            </>
-          }
-        />
-      </main>
-    </body>
+  const children = (
+    <>
+      <h1>This page does not exist...yet? 🤔</h1>
+      <p>
+        Until then, check out my <a href="https://www.abiswas.dev">site</a>!
+      </p>
+    </>
   );
+
+  return <MainLayout children={children} />;
 };
 
 export default NotFoundPage;
-
-export const Head = () => <title>Not found</title>;

@@ -1,0 +1,11 @@
+span {
+  &.highlight {
+    color: var(--span-highlight-color);
+  }
+  &.text-logo {
+    font-size: 21px;
+  }
+  &.header {
+    margin: 58px 0 58px 0;
+  }
+}

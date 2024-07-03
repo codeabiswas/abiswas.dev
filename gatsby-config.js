@@ -8,33 +8,34 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `abiswas.dev`,
+    title: `Andrei Biswas`,
+    description: `Portfolio website for Andrei Biswas`,
     siteUrl: `https://www.abiswas.dev`,
     menuLinks: [
       {
         name: "andrei",
         link: "/#about",
       },
-      {
-        name: "experience",
-        link: "/#experience",
-      },
-      {
-        name: "education",
-        link: "/#education",
-      },
-      {
-        name: "skills",
-        link: "/#skills",
-      },
-      {
-        name: "tech",
-        link: "/#tech",
-      },
-      {
-        name: "music",
-        link: "/#music",
-      },
+      // {
+      //   name: "experience",
+      //   link: "/#experience",
+      // },
+      // {
+      //   name: "education",
+      //   link: "/#education",
+      // },
+      // {
+      //   name: "skills",
+      //   link: "/#skills",
+      // },
+      // {
+      //   name: "tech",
+      //   link: "/#tech",
+      // },
+      // {
+      //   name: "music",
+      //   link: "/#music",
+      // },
       // {
       //   name: "contact",
       //   link: "/#contact",
@@ -50,8 +51,16 @@ module.exports = {
         preconnect: [`https://fonts.googleapis.com`],
         web: [
           {
-            name: `B612`,
-            file: `https://fonts.googleapis.com/css2?family=B612&display=swap`,
+            name: `Playfair Display`,
+            file: `https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap`,
+          },
+          {
+            name: `Playfair Display SC`,
+            file: `https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap`,
+          },
+          {
+            name: `Alata`,
+            file: `https://fonts.googleapis.com/css2?family=Alata&display=swap`,
           },
         ],
       },
